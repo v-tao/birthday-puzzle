@@ -1,25 +1,36 @@
 "use strict"
-class PuzzleContainer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showMetaPuzzle: true,
-            showPuzzle2: false,
-        }
-    }
 
-    render() {
-        return (
-            <div>
-                <MetaPuzzle show={this.state.showMetaPuzzle}></MetaPuzzle>
-                <Puzzle2 show={this.state.showPuzzle2}></Puzzle2>
-            </div>
-        )
+const PuzzleContainer = () => {
+    const [puzzle, setPuzzle] = React.useState("meta");
+    const updatePuzzle = (puzzle) => {
+        setPuzzle(puzzle);
     }
+    return (
+        <div>
+            <Header puzzle={puzzle} updatePuzzle={updatePuzzle}></Header>
+            <MetaPuzzle puzzle={puzzle}></MetaPuzzle>
+            <Puzzle2 puzzle={puzzle}></Puzzle2>
+        </div>
+    )
 }
 
-function MetaPuzzle(props) {
-    if (props.show) {
+const Header = ({updatePuzzle}) => {
+    return( 
+        <div>
+            <h1>The Birthday Puzzle</h1>
+            <button onClick={()=> updatePuzzle("1")}>Puzzle1</button>
+            <button onClick={()=> updatePuzzle("2")}>Puzzle2</button>
+            <button onClick={()=> updatePuzzle("3")}>Puzzle3</button>
+            <button onClick={()=> updatePuzzle("4")}>Puzzle4</button>
+            <button onClick={()=> updatePuzzle("5")}>Puzzle5</button>
+            <button onClick={()=> updatePuzzle("6")}>Puzzle6</button>
+            <button onClick={()=> updatePuzzle("7")}>Puzzle7</button>
+        </div>
+    )
+}
+
+const MetaPuzzle = (props) => {
+    if (props.puzzle == "meta") {
         return ( 
             <div>
                 <p>Insert words</p>
@@ -30,8 +41,8 @@ function MetaPuzzle(props) {
     }
 }
 
-function Puzzle2(props) {
-    if (props.show) {
+const Puzzle2 = (props) => {
+    if (props.puzzle == "2") {
         return (
             <div className="container">
                 <div>

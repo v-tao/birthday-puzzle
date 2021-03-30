@@ -1,45 +1,90 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var PuzzleContainer = function PuzzleContainer() {
+    var _React$useState = React.useState("meta"),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        puzzle = _React$useState2[0],
+        setPuzzle = _React$useState2[1];
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+    var updatePuzzle = function updatePuzzle(puzzle) {
+        setPuzzle(puzzle);
+    };
+    return React.createElement(
+        "div",
+        null,
+        React.createElement(Header, { puzzle: puzzle, updatePuzzle: updatePuzzle }),
+        React.createElement(MetaPuzzle, { puzzle: puzzle }),
+        React.createElement(Puzzle2, { puzzle: puzzle })
+    );
+};
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+var Header = function Header(_ref) {
+    var updatePuzzle = _ref.updatePuzzle;
 
-var PuzzleContainer = function (_React$Component) {
-    _inherits(PuzzleContainer, _React$Component);
+    return React.createElement(
+        "div",
+        null,
+        React.createElement(
+            "h1",
+            null,
+            "The Birthday Puzzle"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("1");
+                } },
+            "Puzzle1"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("2");
+                } },
+            "Puzzle2"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("3");
+                } },
+            "Puzzle3"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("4");
+                } },
+            "Puzzle4"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("5");
+                } },
+            "Puzzle5"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("6");
+                } },
+            "Puzzle6"
+        ),
+        React.createElement(
+            "button",
+            { onClick: function onClick() {
+                    return updatePuzzle("7");
+                } },
+            "Puzzle7"
+        )
+    );
+};
 
-    function PuzzleContainer(props) {
-        _classCallCheck(this, PuzzleContainer);
-
-        var _this = _possibleConstructorReturn(this, (PuzzleContainer.__proto__ || Object.getPrototypeOf(PuzzleContainer)).call(this, props));
-
-        _this.state = {
-            showMetaPuzzle: true,
-            showPuzzle2: false
-        };
-        return _this;
-    }
-
-    _createClass(PuzzleContainer, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                null,
-                React.createElement(MetaPuzzle, { show: this.state.showMetaPuzzle }),
-                React.createElement(Puzzle2, { show: this.state.showPuzzle2 })
-            );
-        }
-    }]);
-
-    return PuzzleContainer;
-}(React.Component);
-
-function MetaPuzzle(props) {
-    if (props.show) {
+var MetaPuzzle = function MetaPuzzle(props) {
+    if (props.puzzle == "meta") {
         return React.createElement(
             "div",
             null,
@@ -52,10 +97,10 @@ function MetaPuzzle(props) {
     } else {
         return null;
     }
-}
+};
 
-function Puzzle2(props) {
-    if (props.show) {
+var Puzzle2 = function Puzzle2(props) {
+    if (props.puzzle == "2") {
         return React.createElement(
             "div",
             { className: "container" },
@@ -77,7 +122,7 @@ function Puzzle2(props) {
     } else {
         return null;
     }
-}
+};
 
 var puzzleContainer = document.querySelector("#puzzle");
 ReactDOM.render(React.createElement(PuzzleContainer, null), puzzleContainer);
