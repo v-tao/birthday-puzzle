@@ -7,9 +7,10 @@ const PuzzleContainer = () => {
     }
     return (
         <div>
-            <Header puzzle={puzzle} updatePuzzle={updatePuzzle}></Header>
+            <Header updatePuzzle={updatePuzzle}></Header>
             <MetaPuzzle puzzle={puzzle}></MetaPuzzle>
             <Puzzle2 puzzle={puzzle}></Puzzle2>
+            <Puzzle6 puzzle={puzzle}></Puzzle6>
         </div>
     )
 }
@@ -29,8 +30,8 @@ const Header = ({updatePuzzle}) => {
     )
 }
 
-const MetaPuzzle = (props) => {
-    if (props.puzzle == "meta") {
+const MetaPuzzle = ({puzzle}) => {
+    if (puzzle == "meta") {
         return ( 
             <div>
                 <p>Insert words</p>
@@ -41,8 +42,8 @@ const MetaPuzzle = (props) => {
     }
 }
 
-const Puzzle2 = (props) => {
-    if (props.puzzle == "2") {
+const Puzzle2 = ({puzzle}) => {
+    if (puzzle == "2") {
         return (
             <div className="container">
                 <div>
@@ -55,6 +56,24 @@ const Puzzle2 = (props) => {
                     <div className="color-square" style={{backgroundColor: "#800000"}}></div>
                     <div className="color-square" style={{backgroundColor: "#FFDEAD"}}></div>
                 </div>
+            </div>
+        )
+    } else {
+        return null;
+    }
+}
+
+const Puzzle6 = ({puzzle}) => {
+    if (puzzle == "6") {
+        return (
+            <div className="container">
+                <ul>
+                    <li>Where are the sleepless nights I used to live for?</li>
+                    <li>Don’t give me love, don’t give me faith.</li>
+                    <li>Remember the first dance we shared?</li>
+                    <li>The faces of the past keep calling me to come back home.</li>
+                    <li>The answer's in the fair winds my love.</li>
+                </ul>
             </div>
         )
     } else {

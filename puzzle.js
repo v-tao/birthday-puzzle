@@ -14,9 +14,10 @@ var PuzzleContainer = function PuzzleContainer() {
     return React.createElement(
         "div",
         null,
-        React.createElement(Header, { puzzle: puzzle, updatePuzzle: updatePuzzle }),
+        React.createElement(Header, { updatePuzzle: updatePuzzle }),
         React.createElement(MetaPuzzle, { puzzle: puzzle }),
-        React.createElement(Puzzle2, { puzzle: puzzle })
+        React.createElement(Puzzle2, { puzzle: puzzle }),
+        React.createElement(Puzzle6, { puzzle: puzzle })
     );
 };
 
@@ -83,8 +84,10 @@ var Header = function Header(_ref) {
     );
 };
 
-var MetaPuzzle = function MetaPuzzle(props) {
-    if (props.puzzle == "meta") {
+var MetaPuzzle = function MetaPuzzle(_ref2) {
+    var puzzle = _ref2.puzzle;
+
+    if (puzzle == "meta") {
         return React.createElement(
             "div",
             null,
@@ -99,8 +102,10 @@ var MetaPuzzle = function MetaPuzzle(props) {
     }
 };
 
-var Puzzle2 = function Puzzle2(props) {
-    if (props.puzzle == "2") {
+var Puzzle2 = function Puzzle2(_ref3) {
+    var puzzle = _ref3.puzzle;
+
+    if (puzzle == "2") {
         return React.createElement(
             "div",
             { className: "container" },
@@ -117,6 +122,48 @@ var Puzzle2 = function Puzzle2(props) {
                 React.createElement("div", { className: "color-square", style: { backgroundColor: "#CD5C5C" } }),
                 React.createElement("div", { className: "color-square", style: { backgroundColor: "#800000" } }),
                 React.createElement("div", { className: "color-square", style: { backgroundColor: "#FFDEAD" } })
+            )
+        );
+    } else {
+        return null;
+    }
+};
+
+var Puzzle6 = function Puzzle6(_ref4) {
+    var puzzle = _ref4.puzzle;
+
+    if (puzzle == "6") {
+        return React.createElement(
+            "div",
+            { className: "container" },
+            React.createElement(
+                "ul",
+                null,
+                React.createElement(
+                    "li",
+                    null,
+                    "Where are the sleepless nights I used to live for?"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Don\u2019t give me love, don\u2019t give me faith."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Remember the first dance we shared?"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "The faces of the past keep calling me to come back home."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "The answer's in the fair winds my love."
+                )
             )
         );
     } else {
