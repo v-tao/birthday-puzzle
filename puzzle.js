@@ -17,6 +17,7 @@ var PuzzleContainer = function PuzzleContainer() {
         React.createElement(Header, { updatePuzzle: updatePuzzle }),
         React.createElement(MetaPuzzle, { puzzle: puzzle }),
         React.createElement(Puzzle2, { puzzle: puzzle }),
+        React.createElement(Puzzle3, { puzzle: puzzle }),
         React.createElement(Puzzle6, { puzzle: puzzle })
     );
 };
@@ -109,19 +110,58 @@ var Puzzle2 = function Puzzle2(_ref3) {
         return React.createElement(
             "div",
             { className: "container" },
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#F0FFFF" } }),
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#ADFF2F" } }),
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#808080" } }),
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#CD5C5C" } }),
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#800000" } }),
+            React.createElement("div", { className: "color-square", style: { backgroundColor: "#FFDEAD" } })
+        );
+    } else {
+        return null;
+    }
+};
+
+var Puzzle3 = function Puzzle3(_ref4) {
+    var puzzle = _ref4.puzzle;
+
+    if (puzzle == "3") {
+        return React.createElement(
+            "div",
+            { className: "container" },
             React.createElement(
-                "div",
+                "ol",
                 null,
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#F0FFFF" } }),
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#ADFF2F" } }),
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#808080" } })
-            ),
-            React.createElement(
-                "div",
-                null,
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#CD5C5C" } }),
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#800000" } }),
-                React.createElement("div", { className: "color-square", style: { backgroundColor: "#FFDEAD" } })
+                React.createElement(
+                    "li",
+                    null,
+                    "Start at your park."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Head south on your road (1 mile)."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Turn left onto Greenwich Road (3.5 miles)."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Turn right onto Mennonite Road (2.6 miles)."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Continue onto North Main Street (1.0 mile)."
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Turn right. Destination will be on the right (98 feet)."
+                )
             )
         );
     } else {
@@ -129,8 +169,8 @@ var Puzzle2 = function Puzzle2(_ref3) {
     }
 };
 
-var Puzzle6 = function Puzzle6(_ref4) {
-    var puzzle = _ref4.puzzle;
+var Puzzle6 = function Puzzle6(_ref5) {
+    var puzzle = _ref5.puzzle;
 
     if (puzzle == "6") {
         return React.createElement(
