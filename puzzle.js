@@ -19,7 +19,8 @@ var PuzzleContainer = function PuzzleContainer() {
         React.createElement(Puzzle2, { puzzle: puzzle }),
         React.createElement(Puzzle3, { puzzle: puzzle }),
         React.createElement(Puzzle4, { puzzle: puzzle }),
-        React.createElement(Puzzle6, { puzzle: puzzle })
+        React.createElement(Puzzle6, { puzzle: puzzle }),
+        React.createElement(Puzzle7, { puzzle: puzzle })
     );
 };
 
@@ -185,7 +186,7 @@ var Puzzle4 = function Puzzle4(_ref5) {
             React.createElement(
                 "h1",
                 { id: "puzzle4-clue2" },
-                "Think inside a hidden box within this box. Call Ray."
+                "Open another box within this box. Call Ray."
             )
         );
     } else {
@@ -231,6 +232,83 @@ var Puzzle6 = function Puzzle6(_ref6) {
                     "li",
                     null,
                     "Where are the sleepless nights I used to live for?"
+                )
+            )
+        );
+    } else {
+        return null;
+    }
+};
+
+var Puzzle7 = function Puzzle7(_ref7) {
+    var puzzle = _ref7.puzzle;
+
+    if (puzzle == "7") {
+        return React.createElement(
+            "div",
+            { className: "container" },
+            React.createElement(
+                "ul",
+                null,
+                React.createElement(
+                    "li",
+                    null,
+                    "Alix E. Harrow"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Lisa Moore"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Philip Kerr"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Elizabeth von Arnim"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Jake Tapper"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Stephen E. Ambrose"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Joan Lingard"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Barbara W. Tuchman"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Rosamunde Pilcher"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Fred Hoyle"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Ernest J. Gaines"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    "Anita Hale Shreve"
                 )
             )
         );

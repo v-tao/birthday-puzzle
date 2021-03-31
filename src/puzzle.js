@@ -13,6 +13,7 @@ const PuzzleContainer = () => {
             <Puzzle3 puzzle={puzzle}></Puzzle3>
             <Puzzle4 puzzle={puzzle}></Puzzle4>
             <Puzzle6 puzzle={puzzle}></Puzzle6>
+            <Puzzle7 puzzle={puzzle}></Puzzle7>
         </div>
     )
 }
@@ -85,7 +86,7 @@ const Puzzle4 = ({puzzle}) => {
         return (
             <div className="container">
                 <h1 id="puzzle4-clue1">Think inside a smaller box.</h1>
-                <h1 id="puzzle4-clue2">Think inside a hidden box within this box. Call Ray.</h1>
+                <h1 id="puzzle4-clue2">Open another box within this box. Call Ray.</h1>
             </div>
         )
     } else {
@@ -107,6 +108,31 @@ const Puzzle6 = ({puzzle}) => {
                     <li>The answer's in the fair winds my love.</li>
                     <li>The faces of the past keep calling me to come back home.</li>
                     <li>Where are the sleepless nights I used to live for?</li>
+                </ul>
+            </div>
+        )
+    } else {
+        return null;
+    }
+}
+
+const Puzzle7 = ({puzzle}) => {
+    if (puzzle == "7") {
+        return (
+            <div className="container">
+                <ul>
+                    <li>Alix E. Harrow</li>
+                    <li>Lisa Moore</li>
+                    <li>Philip Kerr</li>
+                    <li>Elizabeth von Arnim</li>
+                    <li>Jake Tapper</li>
+                    <li>Stephen E. Ambrose</li>
+                    <li>Joan Lingard</li>
+                    <li>Barbara W. Tuchman</li>
+                    <li>Rosamunde Pilcher</li>
+                    <li>Fred Hoyle</li>
+                    <li>Ernest J. Gaines</li>
+                    <li>Anita Hale Shreve</li>
                 </ul>
             </div>
         )
