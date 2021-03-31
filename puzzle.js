@@ -18,6 +18,7 @@ var PuzzleContainer = function PuzzleContainer() {
         React.createElement(MetaPuzzle, { puzzle: puzzle }),
         React.createElement(Puzzle2, { puzzle: puzzle }),
         React.createElement(Puzzle3, { puzzle: puzzle }),
+        React.createElement(Puzzle4, { puzzle: puzzle }),
         React.createElement(Puzzle6, { puzzle: puzzle })
     );
 };
@@ -169,8 +170,35 @@ var Puzzle3 = function Puzzle3(_ref4) {
     }
 };
 
-var Puzzle6 = function Puzzle6(_ref5) {
+var Puzzle4 = function Puzzle4(_ref5) {
     var puzzle = _ref5.puzzle;
+
+    if (puzzle == "4") {
+        return React.createElement(
+            "div",
+            { className: "container" },
+            React.createElement(
+                "h1",
+                { id: "puzzle4-clue1" },
+                "Think inside a smaller box."
+            ),
+            React.createElement(
+                "h1",
+                { id: "puzzle4-clue2" },
+                "Think inside a hidden box within this box. Call Ray."
+            )
+        );
+    } else {
+        return null;
+    }
+};
+
+var Ray = function Ray() {
+    console.log("Think outside this box, and in another box. Your code phrase is \"I proudly announce that I am a furry uwu\"");
+};
+
+var Puzzle6 = function Puzzle6(_ref6) {
+    var puzzle = _ref6.puzzle;
 
     if (puzzle == "6") {
         return React.createElement(
@@ -179,11 +207,6 @@ var Puzzle6 = function Puzzle6(_ref5) {
             React.createElement(
                 "ul",
                 null,
-                React.createElement(
-                    "li",
-                    null,
-                    "Where are the sleepless nights I used to live for?"
-                ),
                 React.createElement(
                     "li",
                     null,
@@ -197,12 +220,17 @@ var Puzzle6 = function Puzzle6(_ref5) {
                 React.createElement(
                     "li",
                     null,
+                    "The answer's in the fair winds my love."
+                ),
+                React.createElement(
+                    "li",
+                    null,
                     "The faces of the past keep calling me to come back home."
                 ),
                 React.createElement(
                     "li",
                     null,
-                    "The answer's in the fair winds my love."
+                    "Where are the sleepless nights I used to live for?"
                 )
             )
         );

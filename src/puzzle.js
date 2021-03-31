@@ -11,6 +11,7 @@ const PuzzleContainer = () => {
             <MetaPuzzle puzzle={puzzle}></MetaPuzzle>
             <Puzzle2 puzzle={puzzle}></Puzzle2>
             <Puzzle3 puzzle={puzzle}></Puzzle3>
+            <Puzzle4 puzzle={puzzle}></Puzzle4>
             <Puzzle6 puzzle={puzzle}></Puzzle6>
         </div>
     )
@@ -79,16 +80,33 @@ const Puzzle3 = ({puzzle}) => {
     }
 }
 
+const Puzzle4 = ({puzzle}) => {
+    if (puzzle == "4") {
+        return (
+            <div className="container">
+                <h1 id="puzzle4-clue1">Think inside a smaller box.</h1>
+                <h1 id="puzzle4-clue2">Think inside a hidden box within this box. Call Ray.</h1>
+            </div>
+        )
+    } else {
+        return null;
+    }
+}
+
+const Ray = () => {
+    console.log("Think outside this box, and in another box. Your code phrase is \"I proudly announce that I am a furry uwu\"")
+}
+
 const Puzzle6 = ({puzzle}) => {
     if (puzzle == "6") {
         return (
             <div className="container">
                 <ul>
-                    <li>Where are the sleepless nights I used to live for?</li>
                     <li>Don’t give me love, don’t give me faith.</li>
                     <li>Remember the first dance we shared?</li>
-                    <li>The faces of the past keep calling me to come back home.</li>
                     <li>The answer's in the fair winds my love.</li>
+                    <li>The faces of the past keep calling me to come back home.</li>
+                    <li>Where are the sleepless nights I used to live for?</li>
                 </ul>
             </div>
         )

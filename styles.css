@@ -10,3 +10,13 @@
     display: flex;
     justify-content: center;
 }
+
+#puzzle4-clue2 {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #puzzle4-clue1 {display: none;}
+    #puzzle4-clue2 {display: block;}
+  }
+
