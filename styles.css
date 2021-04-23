@@ -1,3 +1,8 @@
+img {
+    height: 16rem;
+    margin: 1rem;
+}
+
 .color-square {
     display: inline-block;
     width: 10rem;

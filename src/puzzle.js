@@ -9,6 +9,7 @@ const PuzzleContainer = () => {
         <div>
             <Header updatePuzzle={updatePuzzle}></Header>
             <MetaPuzzle puzzle={puzzle}></MetaPuzzle>
+            <Puzzle1 puzzle={puzzle}></Puzzle1>
             <Puzzle2 puzzle={puzzle}></Puzzle2>
             <Puzzle3 puzzle={puzzle}></Puzzle3>
             <Puzzle4 puzzle={puzzle}></Puzzle4>
@@ -38,6 +39,19 @@ const MetaPuzzle = ({puzzle}) => {
         return ( 
             <div>
                 <p>Insert words</p>
+            </div>
+        )
+    } else {
+        return null;
+    }
+}
+const Puzzle1 = ({puzzle}) => {
+    if (puzzle == "1") {
+        return (
+            <div className="container">
+                <img src="src/puzzle1a.png"></img>
+                <img src="src/puzzle1b.png"></img>
+                <img src="src/puzzle1c.png"></img>
             </div>
         )
     } else {

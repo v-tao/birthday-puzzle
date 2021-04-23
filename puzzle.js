@@ -16,6 +16,7 @@ var PuzzleContainer = function PuzzleContainer() {
         null,
         React.createElement(Header, { updatePuzzle: updatePuzzle }),
         React.createElement(MetaPuzzle, { puzzle: puzzle }),
+        React.createElement(Puzzle1, { puzzle: puzzle }),
         React.createElement(Puzzle2, { puzzle: puzzle }),
         React.createElement(Puzzle3, { puzzle: puzzle }),
         React.createElement(Puzzle4, { puzzle: puzzle }),
@@ -104,9 +105,24 @@ var MetaPuzzle = function MetaPuzzle(_ref2) {
         return null;
     }
 };
-
-var Puzzle2 = function Puzzle2(_ref3) {
+var Puzzle1 = function Puzzle1(_ref3) {
     var puzzle = _ref3.puzzle;
+
+    if (puzzle == "1") {
+        return React.createElement(
+            "div",
+            { className: "container" },
+            React.createElement("img", { src: "src/puzzle1a.png" }),
+            React.createElement("img", { src: "src/puzzle1b.png" }),
+            React.createElement("img", { src: "src/puzzle1c.png" })
+        );
+    } else {
+        return null;
+    }
+};
+
+var Puzzle2 = function Puzzle2(_ref4) {
+    var puzzle = _ref4.puzzle;
 
     if (puzzle == "2") {
         return React.createElement(
@@ -124,8 +140,8 @@ var Puzzle2 = function Puzzle2(_ref3) {
     }
 };
 
-var Puzzle3 = function Puzzle3(_ref4) {
-    var puzzle = _ref4.puzzle;
+var Puzzle3 = function Puzzle3(_ref5) {
+    var puzzle = _ref5.puzzle;
 
     if (puzzle == "3") {
         return React.createElement(
@@ -171,8 +187,8 @@ var Puzzle3 = function Puzzle3(_ref4) {
     }
 };
 
-var Puzzle4 = function Puzzle4(_ref5) {
-    var puzzle = _ref5.puzzle;
+var Puzzle4 = function Puzzle4(_ref6) {
+    var puzzle = _ref6.puzzle;
 
     if (puzzle == "4") {
         return React.createElement(
@@ -198,8 +214,8 @@ var Ray = function Ray() {
     console.log("Think outside this box, and in another box. Your code phrase is \"I proudly announce that I am a furry uwu\"");
 };
 
-var Puzzle6 = function Puzzle6(_ref6) {
-    var puzzle = _ref6.puzzle;
+var Puzzle6 = function Puzzle6(_ref7) {
+    var puzzle = _ref7.puzzle;
 
     if (puzzle == "6") {
         return React.createElement(
@@ -240,8 +256,8 @@ var Puzzle6 = function Puzzle6(_ref6) {
     }
 };
 
-var Puzzle7 = function Puzzle7(_ref7) {
-    var puzzle = _ref7.puzzle;
+var Puzzle7 = function Puzzle7(_ref8) {
+    var puzzle = _ref8.puzzle;
 
     if (puzzle == "7") {
         return React.createElement(
